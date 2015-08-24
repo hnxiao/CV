@@ -1,0 +1,318 @@
+% !TEX encoding = UTF-8 Unicode
+%%% LaTeX Template: Curriculum Vitae
+%%%
+%%% Source: http://www.howtotex.com/
+%%% Feel free to distribute this template, but please keep the referal to HowToTeX.com.
+%%% Date: July 2011
+
+%%% ------------------------------------------------------------
+%%% BEGIN PREAMBLE
+%%% ------------------------------------------------------------
+\documentclass[paper=a4,fontsize=11pt]{scrartcl}	 			% KOMA-article class
+%\usepackage[english]{babel}								% English language/hyphenation
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+%\color{darkgray}
+\usepackage{framed,color}
+%\definecolor{shader}{rgb}{1,0.8,0.3}
+%\definecolor{shader}{rgb}{1,1,1}
+%\definecolor{black}{black}{0.25}
+\usepackage[protrusion=true,expansion=true]{microtype}		% Better typography
+\usepackage{amsmath,amsfonts,amsthm}					% Math packages
+\usepackage{graphicx}								% Enable pdflatex
+\usepackage[svgnames]{xcolor}							% Colors by their 'svgnames'
+\usepackage[left=2cm,top=1cm,right=2cm,bottom=2cm,nohead,nofoot]{geometry}									% Saving trees ;-)
+%\usepackage{url}
+\usepackage{hyperref}										% Clickable URL's
+\usepackage{wrapfig}									% Wrap text along figures
+\usepackage{comment}
+\renewcommand{\refname}{PUBLICATIONS}
+% Bibliography
+%\usepackage{natbib}
+%\usepackage[sorting=ydnt]{biblatex}
+\usepackage{bibentry}
+%\usepackage{bibtex}
+%\nobibliography*
+
+
+%%add a picture
+%\graphicspath{ {images/} }
+%\DeclareGraphicsExtensions{.jpg,.pdf,.png}
+
+
+
+%%% Chinese typesetting %%%%%%%%%%%
+%\usepackage{xeCJK}
+%\setCJKmainfont{STFangsong}
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt
+
+\frenchspacing									% Better looking spacings after periods
+\pagestyle{empty}								% No pagenumbers/headers/footers
+%\usepackage{bbding}									% Symbols
+
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}							% Custom sectioning (see below)
+
+\sectionfont{%									% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%					% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}
+	}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}				% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}			% Vertical space macro
+
+\newcommand{\MyName}[1]{
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1 		% Name
+		\par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1} % Slogan (optional)
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{						% Box to align text
+		\textit{#1}}								% Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}					% Entry value
+
+\newcommand{\SkillsEntry}[2]{						% Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{						% Box to align text
+		\textit{#1}}								% Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}					% Entry value
+
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill 					% Study
+		\colorbox{White}{%
+			\parbox{10em}{%
+			\hfill\color{Black}#2}} \par				% Duration
+		\noindent \textit{#3} \par					% School
+		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{						% Same as \EducationEntry
+		\noindent \textbf{#1} \hfill 					% Jobname
+		\colorbox{White}{\color{Black}#2} \par		% Duration
+		\noindent \textit{#3} \par					% Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
+		\normalsize \par}
+\newcommand{\RefEntry}[7]{						% Same as \EducationEntry
+		\noindent \textbf{#1} \par 					% Jobname
+		\noindent \textit{#2} \par	% Duration
+		\noindent \textit{#3} \par
+		\noindent \textit{#4} \par% Company 	% Description
+		\noindent \textit{#5} \par
+		\noindent \textit{#6} \par
+		\noindent \textit{#7} \par
+		}
+
+\newcommand{\ServiceEntry}[2]{					% Same as \EducationEntry
+		\noindent \textit{#1} \par					% Company
+		\noindent\hangindent=2em\hangafter=0 \small #2 	% Description
+		\normalsize \par}
+\newcommand{\codeEntry}[2]{						% Same as \EducationEntry
+		\noindent \textbf{#1} \hfill 					% Jobname
+		\colorbox{White}{\color{Black}#2} \par		% Duration
+		%\noindent \textit{#2} \par					% Company
+		%\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
+		%\normalsize \par}
+		}
+
+\def\FormatName#1{%
+  \def\myname{Han Xiao}%
+  \edef\name{#1}%
+  \ifx\name\myname
+    \textbf{#1}%
+  \else
+    #1%
+  \fi
+}
+
+%%% ------------------------------------------------------------
+%%% BEGIN DOCUMENT
+%%% ------------------------------------------------------------
+\begin{document}
+%\bibliographystyle{nature}
+%\bibliographystyle{apalike}
+%\bibliographystyle{mystyle}
+%\begin{comment}
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+%\end{comment}
+
+%\begin{shaded}\color{shader}\MyName{Simon\color{gray}Renny-Byfield}\end{shaded}
+\MyName{Han \uppercase{Xiao}}
+%\MySlogan{\textit{Try not to become a man of success but a man of value.}}
+%\MySlogan{\textit{---- Albert Einstein}}
+\color{black}
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Contact}{}
+%\includegraphics{myphoto.jpg}
+%\PersonalEntry{Birth}{December 20, 1986}
+\begin{minipage}{0.6\textwidth}\raggedright
+\PersonalEntry{Address}{Department of Mathematics}
+\PersonalEntry{}{Run Run Shaw Building}
+\PersonalEntry{}{University of Hong Kong}
+\PersonalEntry{}{Hong Kong}
+\PersonalEntry{Mobile}{(852) 5498-0000}
+\PersonalEntry{Email}{\href{mailto:xxxxxx@gmail.com}{xxxxxx@gmail.com}}
+%\PersonalEntry{Website}{www.githubZZZ.com}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}\raggedleft% adapt widths of minipages to your needs
+%\includegraphics[scale=0.025]{myphoto}
+\end{minipage}
+%\PersonalEntry{Webpage}{\href{https://wiki.qut.edu.au/display/cyphy/Hu+He}{\color{red}{https://wiki.qut.edu.au/display/cyphy/Hu+He}}}
+%\PersonalEntry{}{\href{http://hehuvision.blogspot.com}{\color{red}{http://hehuvision.blogspot.com}}}
+
+%%% Education %%%%%
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{Ph.D. \textmd{in} Combinatorial Optimization}{2011-2016}{University of Hong Kong, Hong Kong}{Supervisors: Prof. Wenan Zang\\
+Thesis: Polyhedral methods in combinatorial optimization}
+\sepspace
+
+\EducationEntry{M.Sc. \textmd{in} Operations Research}{2008-2011}{Ocean University of China, Qingdao}{Supervisors: Prof. Qizhi Fang\\
+Thesis: Algorithms for reliable facility location problem}
+\sepspace
+
+\EducationEntry{B.Sc. \textmd{in} Applied Mathematics}{2004-2008}{Ocean University of China, Qingdao}
+
+\NewPart{Academic Experience}{}
+
+\WorkEntry{Senior Research Assistant}{2015-present}{University of Hong Kong, Hong Kong}{}
+\WorkEntry{Teaching Assistant}{2011-2015}{University of Hong Kong, Hong Kong}{Courses taught: Matrix theory and its applications; Introduction to mathematical analysis; Linear algebra; Multivariable calculus and linear algebra; Fundamental concepts of mathematics.\newline}
+
+\WorkEntry{Teaching Assistant}{2008-2011}{Ocean University of China, Qingdao}
+{Courses taught: Probability theory; Probability and statistics; University mathematics}
+
+\NewPart{Research Interests}{}
+\noindent\textbf{Combinatorial Optimization}
+\vspace{4mm}
+
+\noindent\textbf{Algorithmic Game Theory}\\
+\indent\indent focusing on core solvability.
+\vspace{4mm}
+
+\noindent\textbf{Polyhedral Combinatorics}\\
+\indent\indent with emphasis on packing and covering in hypergraphs.
+\vspace{4mm}
+
+\noindent\textbf{Design and Analysis of Algorithms}\\
+\indent\indent mostly arising in the above areas.
+
+%\NewPart{Publications}{}
+%\renewcommand\refname{\vskip -1cm}
+%\bibliographystyle{apa}
+\bibliographystyle{abbrvurl}
+\nocite{*}
+\bibliography{pubs}
+%\printbibliography
+
+\NewPart{Awards and Honors}{}
+\WorkEntry{Postgraduate Scholarship}{2011-2015}{University of Hong Kong}{}
+\WorkEntry{Outstanding Graduates}{2011}{Ocean University of China}{}
+
+\NewPart{Programming Languages}
+\codeEntry{Wolfram Language}{Proficient}
+\codeEntry{Python}{Intermediate}
+\codeEntry{C}{Basic}
+\codeEntry{MATLAB}{Basic}
+
+\NewPart{Academic Memberships}{}
+Society for Industrial and Applied Mathematics (SIAM),\\
+Association for Computing Machinery (ACM).
+
+\NewPart{References}
+%\address{42 Apartment complex}{Street}{City\\Country}
+\RefEntry{Prof. Wenan Zang}{University of Hong Kong}{Department of mathematics}{Run Run Shaw Building}{Pokfulam, Hong Kong}{xxxx@maths.hku.hk}{(852) 2856-0000\\}
+
+%\WorkEntry{Post-Doctoral Research}{Queen Mary University of London}{Supervisor: Prof. Andrew R. Leitch}{2012}
+%%% Publications
+%%% ------------------------------------------------------------
+%\NewPart{Publications}{}
+%\begin{enumerate}
+%\item \bibentry{he2012measuring}
+%\item \bibentry{he2011towards}
+%\item \bibentry{he2010graphcut}
+%\item \bibentry{mckinnon2011towards}
+%\item \bibentry{warren2012large}
+%\item \bibentry{warren2010unaided}
+%\end{enumerate}
+%
+%{\color{red}{\textit{Manuscripts under Review}:}}
+%\begin{enumerate}
+%\item \bibentry{hu2013ietcv}
+%\item \bibentry{hu2013sensors}
+%\item \bibentry{hu2013aim}
+%\item \bibentry{hu2013IROS}
+%\item \bibentry{inkyu2013aim}
+%\item \bibentry{Ferrari2013mee}
+%\end{enumerate}
+%
+%
+%%%% Work experience
+%%%% ------------------------------------------------------------
+%\NewPart{Experience}{}
+%\WorkEntry{Teaching Assistant}{Mar 2012 - Jul 2012}{Queensland University of Technology}{\textbf{ENB244} Microprocessors and Digital Systems}
+%\sepspace
+%\WorkEntry{Research Assistant}{Aug 2009 - Dec 2010}{The University of Queensland}{Working for CRCMining on multiple sensors fusion using EKF}
+%\sepspace
+%\WorkEntry{Teaching Assistant}{Mar 2010 - Dec 2010}{The University of Queensland}{\textbf{MECH3750} Numerical Analysis and Python Programming\\
+%\textbf{MECH2301/2300} Structure Mechanics}
+%\sepspace
+%\WorkEntry{Mentoring}{Sep 2008 - Jun 2009}{Central South University}{Mentoring 30 first year undergraduates in College of Mechanical and Electrical Engineering}
+%
+%
+%%%% Skills
+%%%% ------------------------------------------------------------
+%\NewPart{Skills}{}
+%\SkillsEntry{Languages}{English (fluent)}
+%\SkillsEntry{}{\textbf{CET\footnote{CET: Chinese College English Test}-4, CET-6 and IELTS\footnote{IELTS: International English Language Testing System} 6.5}}
+%\SkillsEntry{Programming}{\textsc{Matlab}, \LaTeX, \textsc{C++}, \textsc{Python}}
+%\SkillsEntry{Softwares}{Solid Edge, Solid Works, AutoCAD, Final Cut Pro}
+%\SkillsEntry{OS}{Windows, Linux, Mac OS X}
+%
+%%%% Services
+%%%% ------------------------------------------------------------
+%\NewPart{Academic Services}{}
+%\ServiceEntry{Conference Reviewer}{IEEE/RSJ International Conference on Intelligent Robots and Systems (\textbf{IROS}) 2013\\
+%IAPR International Conference on Pattern Recognition (\textbf{ICPR}) 2012\\
+%IEEE International Conference of Robotics and Automation (\textbf{ICRA}) 2011,2012\\
+%IEEE Intelligent Vehicles Symposium (\textbf{IV}) 2012\\
+%Australasian Conference on Robotics and Automation (\textbf{ACRA}) 2010\\
+%Marine Robotics Workshop at Robotics: Science and Systems (\textbf{RSS}) 2011}
+%
+%
+%%%% Honors and Awards
+%%%% ------------------------------------------------------------
+%\NewPart{Honors \& Awards}{}
+%\begin{itemize}
+%\item Vice-Chancellor Initiative Top Up Scholarship funded by QUT (2011 - 2012)
+%\item Queensland University of Technology Tuition Fee Waiver Scholarship (2011 - 2013)
+%\item The University of Queensland Research Scholar scholarship (2009 - 2010)
+%\item The University of Queensland International Research Tuition Awards (2009 - 2010)
+%\item Chinese Scholarship Council (CSC) Scholarship (2009-2013)
+%\item State Scholarship, Ministry of Education of China (2007)
+%\item Tanghan Scholarship funded by Guangxi Tanghan Zinc \& Indium Co., Ltd (2007)
+%\item First-Class Scholarship for Outstanding Student funded by CSU (2005-2007)
+%\end{itemize}
+%%%% References
+%%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%Available upon request
+%
+%\nobibliography{hu}
+\end{document}
