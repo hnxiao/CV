@@ -80,16 +80,22 @@
 		\colorbox{White}{%
 			\parbox{10em}{%
 			\hfill\color{Black}#2}} \par				% Duration
-		\noindent\hangindent=2em\hangafter=0 #3 \par					% School
+		\noindent\hangindent=2em\hangafter=0 #3 \par					% Note
+		\iffalse
 		\noindent\hangindent=2em\hangafter=0 #4 	% Description
-		\normalsize \par}
+		\normalsize \par
+		\fi
+		}
 
 \newcommand{\WorkEntry}[4]{						% Slightly different from \EducationEntry
-		\noindent \textbf{#1} \hfill 					% Jobname
+		\noindent \textbf{#1} \hfill 					% Job
 		\colorbox{White}{\color{Black}#2} \par		% Duration
-		\noindent \textit{#3} \par					% Company
+		\noindent #3 \par
+		\iffalse					% Company
 		\noindent \small #4 	% Description
-		\normalsize \par}
+		\normalsize \par
+		\fi
+		}
 \newcommand{\RefEntry}[7]{						% Same as \EducationEntry
 		\noindent \textbf{#1} \par 					% Jobname
 		\noindent \textit{#2} \par	% Duration
@@ -147,7 +153,7 @@
 %\includegraphics{myphoto.jpg}
 %\PersonalEntry{Birth}{December 20, 1986}
 \begin{minipage}{0.6\textwidth}\raggedright
-\PersonalEntry{地址}{香港~~薄扶林}
+\PersonalEntry{地址}{香港}
 \PersonalEntry{}{香港大学}
 \PersonalEntry{}{邵逸夫楼}
 \PersonalEntry{}{数学系}
@@ -165,21 +171,24 @@
 %%% ------------------------------------------------------------
 \NewPart{教育背景}{}
 
-\EducationEntry{Ph.D.  香港大学}{2011-2016}{方向：\textit{组合优化}}{导师： \textit{臧文安教授}\\
+\EducationEntry{Ph.D.  香港大学}{2011-2016}{方向：\textit{组合优化}\\导师： \textit{臧文安教授}\\
 毕业论文：\textit{Polyhedral methods in combinatorial optimization}}
 \sepspace
 
-\EducationEntry{M.Sc.  中国海洋大学}{2008-2011}{方向：\textit{运筹学与控制论}}{导师：\textit{方奇志教授}\\
+\EducationEntry{M.Sc.  中国海洋大学}{2008-2011}{方向：\textit{运筹学与控制论}\\导师：\textit{方奇志教授}\\
 毕业论文：\textit{关于可靠性设施布局问题的近似算法}}
 \sepspace
 
 \EducationEntry{B.Sc.  中国海洋大学}{2004-2008}{专业：\textit{数学与应用数学}}
 
 \NewPart{学术经历}{}
-\WorkEntry{高级助研}{2015-present}{香港大学}{}
-\WorkEntry{助教}{2011-2015}{香港大学}{教过的课程：Matrix theory and its applications; Introduction to mathematical analysis; Linear algebra; Multivariable calculus and linear algebra; Fundamental concepts of mathematics.\newline}
-\WorkEntry{助教}{2008-2011}{中国海洋大学}
-{教过的课程: 概率论，概率论与数理统计，高等数学}
+\WorkEntry{高级助研}{2015-2016}{\textit{香港大学}}
+
+\WorkEntry{助教}{2011-2015}{\textit{香港大学}\\教过的课程：Matrix theory and its applications; Introduction to mathematical analysis; Linear algebra; Multivariable calculus and linear algebra; Fundamental concepts of mathematics.}
+
+
+\WorkEntry{助教}{2008-2011}{\textit{中国海洋大学}
+\\教过的课程: 概率论，概率论与数理统计，高等数学}
 
 \NewPart{研究兴趣}{}
 \noindent\textbf{组合优化}
@@ -202,8 +211,9 @@
 %\printbibliography
 
 \NewPart{荣誉与奖项}{}
-\WorkEntry{Postgraduate Scholarship}{2011-2015}{香港大学}{}
-\WorkEntry{优秀毕业生}{2011}{中国海洋大学}{}
+\WorkEntry{Postgraduate Scholarship}{2011-2015}{\textit{香港大学}}
+
+\WorkEntry{优秀毕业生}{2011}{\textit{中国海洋大学}}
 
 \NewPart{编程语言}
 \codeEntry{Wolfram Language}{熟练}
@@ -213,12 +223,11 @@
 
 \NewPart{学术团体成员}{}
 \noindent Association for Computing Machinery (ACM)\\
-Society for Industrial and Applied Mathematics (SIAM)\\
-
+Society for Industrial and Applied Mathematics (SIAM)
 
 \NewPart{References}
 %\address{42 Apartment complex}{Street}{City\\Country}
-\RefEntry{臧文安教授}{香港\\薄扶林}{香港大学}{邵逸夫楼}{数学系}{xxxx@maths.hku.hk}{(852) 2856-0000\\}
+\RefEntry{臧文安教授}{香港}{香港大学}{邵逸夫楼}{数学系}{xxxx@maths.hku.hk}{(852) 2856-0000}
 
 \rightline{最后更新：\today}
 
