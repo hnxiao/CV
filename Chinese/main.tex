@@ -1,14 +1,11 @@
+% !TEX program = XeLaTeX
 % !TEX encoding = UTF-8 Unicode
-%%% LaTeX Template: Curriculum Vitae
-%%%
-%%% Source: http://www.howtotex.com/
-%%% Feel free to distribute this template, but please keep the referal to HowToTeX.com.
-%%% Date: July 2011
+\documentclass[UTF8,nofonts]{ctexart}
+\setCJKmainfont[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf}
+\setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+\setCJKmonofont{FandolFang-Regular.otf}
 
-%%% ------------------------------------------------------------
-%%% BEGIN PREAMBLE
-%%% ------------------------------------------------------------
-\documentclass[paper=a4,fontsize=11pt]{scrartcl}	 			% KOMA-article class
+% KOMA-article class
 %\usepackage[english]{babel}								% English language/hyphenation
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 %\color{darkgray}
@@ -16,16 +13,18 @@
 %\definecolor{shader}{rgb}{1,0.8,0.3}
 %\definecolor{shader}{rgb}{1,1,1}
 %\definecolor{black}{black}{0.25}
-\usepackage[protrusion=true,expansion=true]{microtype}		% Better typography
+
+%\usepackage[protrusion=true,expansion=true]{microtype}		% Better typography
 \usepackage{amsmath,amsfonts,amsthm}					% Math packages
 \usepackage{graphicx}								% Enable pdflatex
+
 \usepackage[svgnames]{xcolor}							% Colors by their 'svgnames'
 \usepackage[left=2cm,top=1cm,right=2cm,bottom=2cm,nohead,nofoot]{geometry}									% Saving trees ;-)
 %\usepackage{url}
 \usepackage{hyperref}										% Clickable URL's
 \usepackage{wrapfig}									% Wrap text along figures
 \usepackage{comment}
-\renewcommand{\refname}{PUBLICATIONS}
+\renewcommand{\refname}{文章}
 % Bibliography
 %\usepackage{natbib}
 %\usepackage[sorting=ydnt]{biblatex}
@@ -33,18 +32,6 @@
 %\usepackage{bibtex}
 %\nobibliography*
 
-
-%%add a picture
-%\graphicspath{ {images/} }
-%\DeclareGraphicsExtensions{.jpg,.pdf,.png}
-
-
-
-%%% Chinese typesetting %%%%%%%%%%%
-%\usepackage{xeCJK}
-%\setCJKmainfont{STFangsong}
-%\XeTeXlinebreaklocale "zh"
-%\XeTeXlinebreakskip = 0pt plus 1pt
 
 \frenchspacing									% Better looking spacings after periods
 \pagestyle{empty}								% No pagenumbers/headers/footers
@@ -135,9 +122,7 @@
   \fi
 }
 
-%%% ------------------------------------------------------------
-%%% BEGIN DOCUMENT
-%%% ------------------------------------------------------------
+
 \begin{document}
 %\bibliographystyle{nature}
 %\bibliographystyle{apalike}
@@ -150,7 +135,7 @@
 %\end{comment}
 
 %\begin{shaded}\color{shader}\MyName{Simon\color{gray}Renny-Byfield}\end{shaded}
-\MyName{Han \uppercase{Xiao}}
+\MyName{肖\quad 汉}
 %\MySlogan{\textit{Try not to become a man of success but a man of value.}}
 %\MySlogan{\textit{---- Albert Einstein}}
 \color{black}
@@ -158,17 +143,15 @@
 
 %%% Personal details
 %%% ------------------------------------------------------------
-\NewPart{Contact}{}
+\NewPart{联系方式}{}
 %\includegraphics{myphoto.jpg}
 %\PersonalEntry{Birth}{December 20, 1986}
 \begin{minipage}{0.6\textwidth}\raggedright
-\PersonalEntry{Address}{Department of Mathematics}
-\PersonalEntry{}{Run Run Shaw Building}
-\PersonalEntry{}{University of Hong Kong}
-\PersonalEntry{}{Pokfulam}
-\PersonalEntry{}{Hong Kong}
-\PersonalEntry{Mobile}{(852) 5498-0000}
-\PersonalEntry{}{(86) 136-3217-0000}
+\PersonalEntry{地址}{香港~~薄扶林}
+\PersonalEntry{}{香港大学}
+\PersonalEntry{}{邵逸夫楼}
+\PersonalEntry{}{数学系}
+\PersonalEntry{电话}{(852) 5498-0000}
 \PersonalEntry{Email}{\href{mailto:xxxxxx@gmail.com}{xxxxxx@gmail.com}}
 %\PersonalEntry{Website}{www.githubZZZ.com}
 \end{minipage}
@@ -180,36 +163,35 @@
 
 %%% Education %%%%%
 %%% ------------------------------------------------------------
-\NewPart{Education}{}
+\NewPart{教育背景}{}
 
-\EducationEntry{Ph.D. \textmd{in \textbf{Combinatorial Optimization} from \textbf{University of Hong Kong}}}{2011-2016}{Supervisor: \textit{Prof. Wenan Zang}}{Thesis: \textit{Polyhedral methods in combinatorial optimization}}
+\EducationEntry{Ph.D.  香港大学}{2011-2016}{方向：\textit{组合优化}}{导师： \textit{臧文安教授}\\
+毕业论文：\textit{Polyhedral methods in combinatorial optimization}}
 \sepspace
 
-\EducationEntry{M.Sc. \textmd{in \textbf{Operations Research} from \textbf{Ocean University of China}}}{2008-2011}{Supervisor: \textit{Prof. Qizhi Fang}}{Thesis: \textit{Algorithms for reliable facility location problem}}
+\EducationEntry{M.Sc.  中国海洋大学}{2008-2011}{方向：\textit{运筹学与控制论}}{导师：\textit{方奇志教授}\\
+毕业论文：\textit{关于可靠性设施布局问题的近似算法}}
 \sepspace
 
-\EducationEntry{B.Sc. \textmd{in \textbf{Applied Mathematics} from \textbf{Ocean University of China}}}{2004-2008}{}
+\EducationEntry{B.Sc.  中国海洋大学}{2004-2008}{专业：\textit{数学与应用数学}}
 
-\NewPart{Academic Experience}{}
+\NewPart{学术经历}{}
+\WorkEntry{高级助研}{2015-present}{香港大学}{}
+\WorkEntry{助教}{2011-2015}{香港大学}{教过的课程：Matrix theory and its applications; Introduction to mathematical analysis; Linear algebra; Multivariable calculus and linear algebra; Fundamental concepts of mathematics.\newline}
+\WorkEntry{助教}{2008-2011}{中国海洋大学}
+{教过的课程: 概率论，概率论与数理统计，高等数学}
 
-\WorkEntry{Senior Research Assistant}{2015-present}{University of Hong Kong}{}
-\WorkEntry{Teaching Assistant}{2011-2015}{University of Hong Kong}{Courses taught: Matrix theory and its applications; Introduction to mathematical analysis; Linear algebra; Multivariable calculus and linear algebra; Fundamental concepts of mathematics.\newline}
+\NewPart{研究兴趣}{}
+\noindent\textbf{组合优化}
+\vspace{2mm}
 
-\WorkEntry{Teaching Assistant}{2008-2011}{Ocean University of China}
-{Courses taught: Probability theory; Probability and statistics; University mathematics}
+\noindent\textbf{算法对策论}~{\small 侧重于核心的算法解}
+\vspace{2mm}
 
-\NewPart{Research Interests}{}
+\noindent\textbf{多面体组合}~{\small 侧重于超图中的最大最小关系}
+\vspace{2mm}
 
-\noindent\textbf{Combinatorial Optimization}
-\vspace{3mm}
-
-\noindent\textbf{Algorithmic Game Theory} focusing on core solvability
-\vspace{3mm}
-
-\noindent\textbf{Polyhedral Combinatorics} with emphasis on packing and covering in hypergraphs
-\vspace{3mm}
-
-\noindent\textbf{Design and Analysis of Algorithms} mostly arising in the above areas
+\noindent\textbf{算法的设计与分析}~{\small 大多数源于以上领域的研究}
 
 %\NewPart{Publications}{}
 %\renewcommand\refname{\vskip -1cm}
@@ -219,27 +201,27 @@
 \bibliography{pubs}
 %\printbibliography
 
-\NewPart{Awards and Honors}{}
-\WorkEntry{Postgraduate Scholarship}{2011-2015}{University of Hong Kong}{}
-\WorkEntry{Outstanding Graduates}{2011}{Ocean University of China}{}
+\NewPart{荣誉与奖项}{}
+\WorkEntry{Postgraduate Scholarship}{2011-2015}{香港大学}{}
+\WorkEntry{优秀毕业生}{2011}{中国海洋大学}{}
 
-\NewPart{Programming Languages}
-\codeEntry{Wolfram Language}{Proficient}
-\codeEntry{Python}{Intermediate}
-\codeEntry{C}{Basic}
-\codeEntry{MATLAB}{Basic}
+\NewPart{编程语言}
+\codeEntry{Wolfram Language}{熟练}
+\codeEntry{Python}{中级}
+\codeEntry{C}{入门}
+\codeEntry{MATLAB}{入门}
 
-\NewPart{Academic Memberships}{}
-Association for Computing Machinery (ACM)\\
+\NewPart{学术团体成员}{}
+\noindent Association for Computing Machinery (ACM)\\
 Society for Industrial and Applied Mathematics (SIAM)\\
 
 
 \NewPart{References}
 %\address{42 Apartment complex}{Street}{City\\Country}
-\RefEntry{Prof. Wenan Zang}{Department of mathematics}{Run Run Shaw Building}{University of Hong Kong}{Pokfulam\\Hong Kong}{xxxx@maths.hku.hk}{(852) 2856-0000\\}
+\RefEntry{臧文安教授}{香港\\薄扶林}{香港大学}{邵逸夫楼}{数学系}{xxxx@maths.hku.hk}{(852) 2856-0000\\}
 
+\rightline{最后更新：\today}
 
-\rightline{Last updated: \today}
 %\WorkEntry{Post-Doctoral Research}{Queen Mary University of London}{Supervisor: Prof. Andrew R. Leitch}{2012}
 %%% Publications
 %%% ------------------------------------------------------------
