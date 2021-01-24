@@ -3,11 +3,12 @@
 % !TEX encoding = UTF-8 Unicode
 % Awesome CV LaTeX Template
 
-\documentclass[localFont]{awesome-source-cv} %alternative
+\documentclass[localFont]{styles/awesome-source-cv} %alternative
 
-\usepackage{zh_cn-adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zn_cn-adobe/)
+\usepackage{styles/academicons}
+\usepackage{styles/zh_cn-adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zn_cn-adobe/)
 
-\name{}{\LARGE 肖汉~博士}
+\name{}{\Large 肖汉~博士}
 \tagline{}
 \socialinfo{
 	\email{}{\hspace{-.8em}hxiao [at] ouc.edu.cn} \hspace{1em}
@@ -16,16 +17,16 @@
 
 \begin{document}
 \fontsize{9.5pt}{\baselineskip}\selectfont
-
 	\makecvheader
-	\vspace{-4em}
-	\input{section_headline}
-	\input{section_education}
-	\input{section_teaching}	
-	\input{section_research}	
-	\input{section_grants}	
-	\input{section_publications}	
-	\input{section_services}	
+	\vspace{-5em}
+	\input{sections/section_headline}
+	\input{sections/section_education}
+	\input{sections/section_teaching}	
+	\input{sections/section_research}	
+	\input{sections/section_grants}	
+	\input{sections/section_publications}	
+	\input{sections/section_talks}
+	\input{sections/section_services}	
 	\noindent \\		
-      （最近更新: 2021年1月1日）
+      （最近更新: 2021年1月1日)
 \end{document}
